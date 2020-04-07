@@ -1,0 +1,61 @@
+<!--pages/detail/detail.wxml-->
+<view wx:if="{{qa1.username}}">
+	<view class="info-title">学生反馈内容</view>
+	<van-cell-group border="{{ false }}">
+		<van-field value="{{ qa1.username }}" label="学生姓名" bind:change="inputName" placeholder="请输入" disabled border="{{ false }}" />
+		<van-field value="{{ qa1.userclass }}" label="学生班级" bind:change="inputClass" placeholder="请输入" disabled border="{{ false }}" />
+	</van-cell-group>
+	<block wx:for="{{qa1.qa}}" wx:key="index" wx:key-index="index">
+		<view class="item-li" wx:if="{{item.type == 'reado'}}">
+			<view class="item-title"><text style="color:red;position: absolute;left: 18rpx;"></text>{{item.title}}</view>
+			<view class="item-main">
+				<view wx:for="{{item.option}}" wx:key='index' wx:for-item="items" wx:key-index="indexs" class="{{item.value==items.id?'active':''}}">
+					{{items.name}}
+				</view>
+			</view>
+		</view>
+	</block>
+	<view class="item-li" wx:if="{{qa1.text}}">
+		<view class="item-title"><text style="color:red;position: absolute;left: 18rpx;"></text>是否需要补充其他孩子的学习反馈？如有，请补充</view>
+		<view class="item-textarea">
+            {{qa1.text}}
+			<!-- <textarea auto-height bindinput="bindinputText"></textarea> -->
+		</view>
+	</view>
+</view>
+<view wx:if="{{qa2.username}}">
+	<view class="info-title">健康反馈内容</view>
+	<van-cell-group border="{{ false }}">
+		<van-field value="{{ qa2.username }}" label="学生姓名" bind:change="inputName" placeholder="请输入" disabled border="{{ false }}" />
+		<van-field value="{{ qa2.userclass }}" label="学生班级" bind:change="inputClass" placeholder="请输入" disabled border="{{ false }}" />
+	</van-cell-group>
+	<view class="picker-box">
+		<view class="picker">
+			<view class="title">您当前位置</view>
+			<view class="vaule">{{qa2.address}}</view>
+		</view>	
+	</view>
+	<block wx:for="{{qa2.qa}}" wx:key="index" wx:key-index="index">
+		<view class="item-li" wx:if="{{item.type == 'reado'}}">
+			<view class="item-title"><text style="color:red;position: absolute;left: 18rpx;"></text>{{item.title}}</view>
+			<view class="item-main">
+				<view wx:for="{{item.option}}" wx:key='index' wx:for-item="items" wx:key-index="indexs" class="{{item.value==items.id?'active':''}}">
+					{{items.name}}
+				</view>
+			</view>
+		</view>
+	</block>
+	
+	<van-cell-group border="{{ false }}">
+		<van-field value="{{ qa2.usermobile }}" label="您的手机号码" bind:change="inputMobile" disabled placeholder="请输入"  border="{{ false }}" />
+	</van-cell-group>
+	<view class="item-li" wx:if="{{qa2.text}}">
+		<view class="item-title"><text style="color:red;position: absolute;left: 18rpx;"></text>是否需要提供其他反馈内容？如有，请补充说明</view>
+		<view class="item-textarea">
+            {{qa2.text}}
+
+			<!-- <textarea auto-height bindinput="bindinputText2"></textarea> -->
+		</view>
+	</view>
+</view>
+<view wx:if="{{userInfo.result_qa}}" class="btn-submit-res" bindtap="resetInfo">重置信息</view>

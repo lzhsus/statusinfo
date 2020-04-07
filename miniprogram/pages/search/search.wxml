@@ -1,0 +1,15 @@
+<!--pages/search/search.wxml-->
+
+<van-search value="{{ searchValue }}" placeholder="请输入搜索关键词" use-action-slot bind:change="change" bind:search="search" bind:cancel="cancel">
+	<view slot="action" bind:tap="onClickSearch">搜索</view>
+</van-search>
+
+<view>
+	<view class="li" wx:for="{{result}}" wx:key="index" bindtap="lookResult" data-item="{{item}}">
+		<view class="item">
+			<view class="name">学生姓名：{{item.username}}</view>
+			<view class="class">学生班级：{{item.userclass}}</view>
+			<view class="updata">更新时间：{{item.time}}</view>
+		</view>
+	</view>
+</view>

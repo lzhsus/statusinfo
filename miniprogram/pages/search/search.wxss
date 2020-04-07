@@ -1,0 +1,17 @@
+/* pages/search/search.wxss */
+.li{
+    width: 710rpx;margin:12rpx auto;
+    padding: 30rpx 40rpx;box-sizing: border-box;
+    background: #fff;
+    border-radius: 12rpx;
+}
+.name{
+    font-size: 14px;color: rgb(68, 67, 67);
+}
+.class{
+    font-size: 14px;color: rgb(68, 67, 67);
+    margin: 4px 0;
+}
+.updata{
+    font-size: 14px;color: rgb(68, 67, 67);
+}

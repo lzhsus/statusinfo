@@ -1,0 +1,42 @@
+<!--pages/schedule/schedule.wxml-->
+<view class="info-title">
+	老师健康信息登记
+</view>
+
+<van-cell-group>
+	<van-field value="{{ username }}"  label="用户名"  placeholder="请输入" required border="{{ false }}" />
+
+	<van-field value="{{ password }}"  label="职位" placeholder="请输入" required border="{{ false }}" />
+	<van-field value="{{ username }}"  label="用户名"  placeholder="请输入" required border="{{ false }}" />
+
+	<van-field value="{{ password }}"  label="职位" placeholder="请输入" required border="{{ false }}" />
+	<van-field value="{{ username }}"  label="用户名"  placeholder="请输入" required border="{{ false }}" />
+
+	<van-field value="{{ password }}"  label="职位" placeholder="请输入" required border="{{ false }}" />
+	<van-field value="{{ username }}"  label="用户名"  placeholder="请输入" required border="{{ false }}" />
+
+	<van-field value="{{ password }}"  label="职位" placeholder="请输入" required border="{{ false }}" />
+	<van-field value="{{ username }}"  label="用户名"  placeholder="请输入" required border="{{ false }}" />
+
+	<van-field value="{{ password }}"  label="职位" placeholder="请输入" required border="{{ false }}" />
+	<van-field value="{{ password }}"  label="职位" placeholder="请输入" required border="{{ false }}" />
+	<van-field value="{{ username }}"  label="用户名"  placeholder="请输入" required border="{{ false }}" />
+
+	<van-field value="{{ password }}"  label="职位" placeholder="请输入" required border="{{ false }}" />
+	<van-field value="{{ username }}"  label="用户名"  placeholder="请输入" required border="{{ false }}" />
+
+	<van-field value="{{ password }}"  label="职位" placeholder="请输入" required border="{{ false }}" />
+	<van-field value="{{ username }}"  label="用户名"  placeholder="请输入" required border="{{ false }}" />
+
+	<van-field value="{{ password }}"  label="职位" placeholder="请输入" required border="{{ false }}" />
+	<van-field value="{{ password }}"  label="职位" placeholder="请输入" required border="{{ false }}" />
+	<van-field value="{{ username }}"  label="用户名"  placeholder="请输入" required border="{{ false }}" />
+
+	<van-field value="{{ password }}"  label="职位" placeholder="请输入" required border="{{ false }}" />
+	<van-field value="{{ username }}"  label="用户名"  placeholder="请输入" required border="{{ false }}" />
+
+	<van-field value="{{ password }}"  label="职位" placeholder="请输入" required border="{{ false }}" />
+	<van-field value="{{ username }}"  label="用户名"  placeholder="请输入" required border="{{ false }}" />
+
+	<van-field value="{{ password }}"  label="职位" placeholder="请输入" required border="{{ false }}" />
+</van-cell-group>

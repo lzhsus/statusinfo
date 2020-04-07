@@ -1,0 +1,104 @@
+/* pages/detail/detail.wxss */
+.info-title{
+    padding: 12rpx;box-sizing: border-box;
+    font-size: 18px;color: #000;
+    text-align: center;
+}
+.item-li{
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 16px 0;
+    font-size: 14px;
+    line-height: 24px;
+    color: #323233;
+    background-color: #fff;
+    flex-direction: column;
+}
+.btn-submit{
+    width: 280rpx;height: 70rpx;margin:20rpx auto;
+    border-radius: 12rpx;
+    font-size: 12px;color: #fff;
+    text-align: center;line-height: 70rpx;
+    background: #ff9853;
+}
+.btn-submit-res{
+    width: 280rpx;height: 70rpx;margin:20rpx auto;
+    border-radius: 12rpx;
+    font-size: 12px;color: #fff;
+    text-align: center;line-height: 70rpx;
+    background: #ee0a24;
+}
+.item-li .title{
+    padding-bottom: 10px;
+    position: relative;
+}
+.item-li .title text{
+    position: absolute;left: -4px;
+    color: red;
+}
+.item-main{
+    display: flex;justify-content: flex-start;align-items: center;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 10px 16px;
+}
+.item-textarea{
+    width: 100%;
+    padding: 12rpx;box-sizing: border-box;
+    border:1px solid #ccc;
+    margin-bottom: 20rpx;
+}
+.item-textarea textarea{
+    width: 100%;min-height: 160rpx;
+    padding: 12rpx;box-sizing: border-box;
+}
+.item-main view{
+    min-width: 22%;
+    padding-left: 60rpx;box-sizing: border-box;
+    position: relative;
+}
+.item-main view::after{
+    position: absolute;top: 50%;left: 4px;
+    transform: translateY(-50%);
+    display: flex;content: '';
+    width: 30rpx;height: 30rpx;
+    border-radius: 4px;
+    background: url(https://6465-demo-45za6-1301766206.tcb.qcloud.la/index-img-8.png?sign=be87d467c96a7c5a10a547cc8a9fcce0&t=1585967090) center top no-repeat;
+    background-size: 100% auto;
+}
+.item-main view.active::after{
+    position: absolute;top: 50%;left: 4px;
+    transform: translateY(-50%);
+    display: flex;content: '';
+    width: 30rpx;height: 30rpx;
+    border-radius: 4px;
+    background: url(https://6465-demo-45za6-1301766206.tcb.qcloud.la/index-img-8.png?sign=be87d467c96a7c5a10a547cc8a9fcce0&t=1585967090) center bottom no-repeat;
+    background-size: 100% auto;
+}
+.img100{
+    display: block;width: 100%;
+}
+.picker-box{
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #323233;
+    background-color: #fff;
+    flex-direction: column;
+}
+
+.picker-box .picker{
+    display: flex;justify-content: flex-start;align-items: center;
+}
+.picker-box .picker .title{
+    width: 90px;
+}
+.picker-box .picker .vaule.active{
+    color: #969799;
+}

@@ -1,0 +1,114 @@
+<!--pages/home/home.wxml-->
+<swiper vertical current="{{current}}" wx:if="{{!start}}">
+	<swiper-item catchtouchmove='catchTouchMove'>
+		<view class="swiper-item">
+			<image class="img100" src="https://6465-demo-45za6-1301766206.tcb.qcloud.la/index-img-6.png?sign=543d07661752e7fdf06de36bcf322112&t=1585965285" mode="widthFix" />
+			<image class="img100 jiantou" bindtap="startBtn" src="https://6465-demo-45za6-1301766206.tcb.qcloud.la/index-img-7.png?sign=8cb65016e1ce5afe07f41c515a593fe6&t=1585965338" mode="widthFix" />
+		</view>
+	</swiper-item>
+	<!-- <swiper-item catchtouchmove='catchTouchMove'>
+		
+	</swiper-item> -->
+</swiper>
+<view class="swiper-item-2" wx:if="{{start == 1||start == 2}}">
+	<view wx:if="{{start == 1}}">
+		<view class="info-title">学习反馈内容</view>
+		<van-cell-group border="{{ false }}">
+			<van-field value="{{ username }}" label="学生姓名" bind:change="inputName" placeholder="请输入"  border="{{ false }}" />
+			<van-field value="{{ userclass }}" label="学生班级" bind:change="inputClass" placeholder="请输入"  border="{{ false }}" />
+		</van-cell-group>
+		<block wx:for="{{qaList}}" wx:key="index" wx:key-index="index">
+			<view class="item-li" wx:if="{{item.type == 'reado'}}">
+				<view class="item-title"><text style="color:red;position: absolute;left: 18rpx;"></text>{{item.title}}</view>
+				<view class="item-main">
+					<view wx:for="{{item.option}}" wx:key='index' wx:for-item="items" wx:key-index="indexs" class="{{item.value==items.id?'active':''}}" bindtap="sBtn" data-items="{{items}}" data-item="{{item}}">
+						{{items.name}}
+					</view>
+				</view>
+			</view>
+		</block>
+		<view class="item-li">
+			<view class="item-title"><text style="color:red;position: absolute;left: 18rpx;"></text>是否需要补充其他孩子的学习反馈？如有，请补充</view>
+			<view class="item-textarea">
+				<view bindtap="textBtn" class="textarea active" wx:if="{{!textview}}">请输入</view>
+				<textarea  wx:if="{{textview == 1}}" focus="{{textview == 1}}" fixed="true" auto-height bindinput="bindinputText" placeholder="请输入"></textarea>
+			</view>
+		</view>
+		<view class="btn-submit" bindtap="submit">提交信息</view>
+	</view>
+	<view wx:if="{{start == 2}}">
+		<view class="info-title">健康反馈内容</view>
+		<van-cell-group border="{{ false }}">
+			<van-field value="{{ username }}" label="学生姓名" bind:change="inputName" placeholder="请输入" disabled border="{{ false }}" />
+			<van-field value="{{ userclass }}" label="学生班级" bind:change="inputClass" placeholder="请输入" disabled border="{{ false }}" />
+		</van-cell-group>
+		<view class="address">
+			<view></view>
+			<view></view>
+		</view>
+		<view class="picker-box">
+			<picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+				<view class="picker" wx:if="{{region[0]}}">
+					<view class="title">您当前位置</view>
+					<view class="vaule">{{region[0]}}，{{region[1]}}，{{region[2]}}</view>
+				</view>
+				<view class="picker" wx:else>
+					<view class="title">您当前位置</view>
+					<view class="vaule active">请选择</view>
+				</view>
+			</picker>	
+		</view>
+		
+		<block wx:for="{{qaList2}}" wx:key="index" wx:key-index="index">
+			<view class="item-li" wx:if="{{item.type == 'reado'}}">
+				<view class="item-title"><text style="color:red;position: absolute;left: 18rpx;"></text>{{item.title}}</view>
+				<view class="item-main">
+					<view wx:for="{{item.option}}" wx:key='index' wx:for-item="items" wx:key-index="indexs" class="{{item.value==items.id?'active':''}}" bindtap="sBtn2" data-items="{{items}}" data-item="{{item}}">
+						{{items.name}}
+					</view>
+				</view>
+			</view>
+		</block>
+		<van-cell-group border="{{ false }}">
+			<van-field value="{{ usermobile }}" label="您的手机号码" bind:change="inputMobile" placeholder="请输入"  border="{{ false }}" />
+		</van-cell-group>
+		<view class="item-li">
+			<view class="item-title"><text style="color:red;position: absolute;left: 18rpx;"></text>是否需要提供其他反馈内容？如有，请补充说明</view>
+			<view class="item-textarea">
+			
+				<view bindtap="textBtn2" class="textarea active" wx:if="{{!textview}}">请输入</view>
+				<textarea  wx:if="{{textview == 2}}" focus="{{textview == 2}}" fixed="{{true}}" auto-height bindinput="bindinputText2" placeholder="请输入"></textarea>
+			</view>
+		</view>
+		<view class="btn-submit" bindtap="submit2">提交信息</view>
+	</view>
+</view>
+<!-- <view class="pages-1" wx:if="{{pageShow == 1}}">
+    <image wx:if="{{userInfo.teacher}}" class="img100" src="https://6465-demo-45za6-1301766206.tcb.qcloud.la/index-img-4.jpg?sign=1598ab6117645edcb0ba3aba4373a9f5&t=1585930992" mode="widthFix" />
+    <image wx:elif="{{userInfo.isMember}}" class="img100" src="https://6465-demo-45za6-1301766206.tcb.qcloud.la/index-img.jpg?sign=0e860fcb9dfa9ec82137066e0dd71165&t=1585927738" mode="widthFix" />
+    <image wx:else class="img100" src="https://6465-demo-45za6-1301766206.tcb.qcloud.la/index-img-5.jpg?sign=254cb4f9795732e816d961fe547b7eb6&t=1585930879" mode="widthFix" />
+    <image class="img100 footber" src="https://6465-demo-45za6-1301766206.tcb.qcloud.la/index-img-2.jpg?sign=81dbccc1af690044ed906b4982ec1cdc&t=1585927499" mode="widthFix" />
+    <image class="img100 jiantou" bindtap="startBtn" src="https://6465-demo-45za6-1301766206.tcb.qcloud.la/index-img-3.jpg?sign=72c0d6294a3c2957ab3ec1b6a1d5af1e&t=1585927623" mode="widthFix" />
+</view> -->
+<view class="pages-2" wx:if="{{pageShow == 2}}">
+	<!--  -->
+</view>
+
+<van-popup show="{{ loginShow }}" round>
+	<view class="van-popup-wrapper">
+		<view class="wrapper">
+			<view class="title">注册</view>
+			<view class="mobile">
+				<van-cell-group border="{{ false }}">
+					<van-field value="{{ mobile }}" bind:input="mobileInput" label="手机号" placeholder="请输入手机号" border="{{ false }}" />
+					<van-field value="{{ v_code }}" label="验证码" center bind:input="vcodeInput" placeholder="请输入短信验证码" border="{{ false }}" use-button-slot>
+						<button bindtap="getCode" slot="button" type="default" size="mini" style="font-size:12px;">
+							{{second?second+'s':'发送验证码'}}
+						</button>
+					</van-field>
+				</van-cell-group>
+			</view>
+			<van-button bindtap="validateCodeBtn" type="primary" block>确认提交</van-button>
+		</view>
+	</view>
+</van-popup>
